@@ -30,7 +30,7 @@ Use `\documentclass[english]{pivotalbeamer}` to set it. If you require further o
 
 # Example deck
 
-The file `example.tex` contains an examplary deck. See [[https://github.com/gopivotal/beamer_pivotal/blob/master/example.pdf?raw%3Dtrue][example.pdf]] for the compiled version.
+The file `example.tex` contains an examplary deck. See [example.pdf](https://github.com/gopivotal/beamer_pivotal/blob/master/example.pdf?raw%3Dtrue) for the compiled version.
 
 # Where to get help
 
