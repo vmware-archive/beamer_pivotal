@@ -1,4 +1,4 @@
-% Created 2013-12-24 Tue 16:55
+% Created 2013-12-24 Tue 21:59
 \documentclass[english,presentation]{pivotalbeamer}
                               \subtitle{Example Presentation}
 \usetheme{default}
@@ -31,40 +31,208 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile,label=sec-1-2]{Paralleles Boosting}
+\begin{frame}[fragile,label=sec-1-2]{Two columns}
+\begin{columns}
+\begin{column}{0.5\textwidth}
 \begin{itemize}
-\item Shared vs. Distributed Memory
-\item ISLEBoost
-\item ParBoost
-\item Simulationen
-\begin{enumerate}
-\item Skalierbarkeit
-\item Variablenselektion
-\item Vorhersagegüte
-\end{enumerate}
-\item Echtdaten Experimente
-\item Schlussfolgerungen
+\item Considering the aspect ratio is 16:9
+\item It is probably a good idea to use two columns
+\item To avoid really long lines
+\item Typesetting just looks nicer than in PowerPoint
+\item And it can be versioned!
 \end{itemize}
+\end{column}
+
+\begin{column}{0.5\textwidth}
+\begin{itemize}
+\item Some other content on this side
+\item Big data
+\item More big data
+\item Hadoop
+\item GPDB
+\item MADlib
+\item $x+y = z$
+\end{itemize}
+\end{column}
+\end{columns}
 \end{frame}
 
-\begin{frame}[fragile,label=sec-1-3]{Paralleles Boosting}
-\begin{itemize}
-\item ISLEBoost
-\item ParBoost
-\item Simulationen
-\begin{itemize}
-\item Skalierbarkeit
-\item Variablenselektion
-\item Vorhersagegüte
+\begin{frame}[fragile,label=sec-1-3]{Let us create a plot with \texttt{ggplot2}}
+ \begin{itemize}
+\item \texttt{ggplot2} is a really nice plotting library
+\item It can export graphics using TikZ
+\item Which look really nice in \LaTeX
 \end{itemize}
-\item Echtdaten Experimente
-\item Schlussfolgerungen
-\end{itemize}
+
+\begin{minted}[bgcolor=bg,fontsize=\scriptsize,linenos=true]{r}
+library(ggplot2)
+library(gcookbook)
+sps <- ggplot(heightweight, aes(x=ageYear, y=heightIn, colour=sex))
++ geom_point()
++ scale_colour_brewer(palette="Set1")
+sps + geom_smooth()
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile,label=sec-1-4]{The plot using TikZ}
+\begin{centering}
+\small{\input{./ggplot.tex}}
+\end{centering}
 \end{frame}
 
 \section{Second Section}
 \label{sec-2}
-\begin{frame}[fragile,label=sec-2-1]{Another frame}
+\begin{frame}[fragile,label=sec-2-1]{A timeline using TikZ}
+\tikzstyle{decision} = [diamond, draw, fill=yellow!30,
+    text width=4.5em, text badly centered, node distance=2.5cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=yellow!30,
+    text width=10em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, very thick, color=black!50, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=yellow!30, node distance=2.5cm,
+    minimum height=2em]
+\begin{tikzpicture}[snake=zigzag, line before snake = 5mm, line after snake = 5mm]
+\draw (0,0) -- (7,0);
+\draw[snake] (7,0) -- (10,0);
+\foreach \x in {0,3,6,10}
+   \draw (\x cm,3pt) -- (\x cm,-3pt);
+\draw (0,0) node[below=3pt] {$ t-1 $} node[above=3pt] {$ gestern $};
+\draw (3,0) node[below=3pt] {$ t $} node[above=3pt] {$ heute $};
+\draw (4,0) node[below=3pt] {$  $} node[above=3pt] {$  $};
+\draw (5,0) node[below=3pt] {$  $} node[above=3pt] {$  $};
+\draw (6,0) node[below=3pt] {$ t+1 $} node[above=3pt] {$ morgen $};
+\draw (10,0) node[below=3pt] {$ T $} node[above=3pt] {$  $};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}[fragile,label=sec-2-2]{Explaining equations (\TeX{}ample.net)}
+\everymath{\displaystyle}
+\tikzstyle{every picture}+=[remember picture]
+\tikzstyle{na} = [baseline=-.5ex]
+
+\begin{itemize}[<+-| alert@+>]
+    \item Coriolis acceleration
+        \tikz[na] \node[coordinate] (n1) {};
+\end{itemize}
+
+% Below we mix an ordinary equation with TikZ nodes. Note that we have to
+% adjust the baseline of the nodes to get proper alignment with the rest of
+% the equation.
+\begin{equation*}
+\vec{a}_p = \vec{a}_o+\frac{{}^bd^2}{dt^2}\vec{r} +
+        \tikz[baseline]{
+            \node[fill=blue!20,anchor=base] (t1)
+            {$ 2\vec{w}_{ib}\times\frac{{}^bd}{dt}\vec{r}$};
+        } +
+        \tikz[baseline]{
+            \node[fill=red!20, ellipse,anchor=base] (t2)
+            {$\vec{\alpha}_{ib}\times\vec{r}$};
+        } +
+        \tikz[baseline]{
+            \node[fill=green!20,anchor=base] (t3)
+            {$\vec{w}_{ib}\times(\vec{w}_{ib}\times\vec{r})$};
+        }
+\end{equation*}
+
+\begin{itemize}[<+-| alert@+>]
+    \item Transversal acceleration
+        \tikz[na]\node [coordinate] (n2) {};
+    \item Centripetal acceleration
+        \tikz[na]\node [coordinate] (n3) {};
+\end{itemize}
+
+% Now it's time to draw some edges between the global nodes. Note that we
+% have to apply the 'overlay' style.
+\begin{tikzpicture}[overlay]
+        \path[->]<1-> (n1) edge [bend left] (t1);
+        \path[->]<2-> (n2) edge [bend right] (t2);
+        \path[->]<3-> (n3) edge [out=0, in=-90] (t3);
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}[fragile,label=sec-2-3]{A graph (\TeX{}ample.net)}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3cm,
+  thick,main node/.style={circle,fill=blue!20,draw,font=\sffamily\Large\bfseries}]
+
+  \node[main node] (1) {1};
+  \node[main node] (2) [below left of=1] {2};
+  \node[main node] (3) [below right of=2] {3};
+  \node[main node] (4) [below right of=1] {4};
+
+  \path[every node/.style={font=\sffamily\small}]
+    (1) edge node [left] {0.6} (4)
+        edge [bend right] node[left] {0.3} (2)
+        edge [loop above] node {0.1} (1)
+    (2) edge node [right] {0.4} (1)
+        edge node {0.3} (4)
+        edge [loop left] node {0.4} (2)
+        edge [bend right] node[left] {0.1} (3)
+    (3) edge node [right] {0.8} (2)
+        edge [bend right] node[right] {0.2} (4)
+    (4) edge node [left] {0.2} (3)
+        edge [loop right] node {0.6} (4)
+        edge [bend right] node[right] {0.2} (1);
+\end{tikzpicture}
+\end{frame}
+
+\section{Some Code}
+\label{sec-3}
+\begin{frame}[fragile,label=sec-3-1]{Python}
+ \begin{itemize}
+\item Pygments via \texttt{minted} has syntax highlighting for all major languages
+\end{itemize}
+\begin{minted}[bgcolor=bg,fontsize=\scriptsize,linenos=true]{python}
+# List comprehensions
+num = [1, 4, -5, 10, -7, 2, 3, -1]
+filtered_and_squared = [ x**2 for x in num if x > 0]
+print filtered_and_squared
+
+# Generators
+num = [1, 4, -5, 10, -7, 2, 3, -1]
+filtered_and_squared = ( x**2 for x in num if x > 0 )
+print filtered_and_squared
+
+for item in filtered_and_squared:
+    print item
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile,label=sec-3-2]{New dplyr package}
+ \begin{minted}[bgcolor=bg,fontsize=\scriptsize,linenos=true]{r}
+library(dplyr)
+# Built in data frame
+head(hflights)
+
+# Coerce to data table
+hflights_dt <- tbl_dt(hflights)
+
+# Caches data in local SQLite db
+hflights_db1 <- tbl(hflights_sqlite(), "hflights")
+
+# Caches data in local postgres db
+hflights_db2 <- tbl(hflights_postgres(), "hflights")
+
+carriers_df  <- group_by(hflights, UniqueCarrier)
+carriers_dt  <- group_by(hflights_dt, UniqueCarrier)
+carriers_db1 <- group_by(hflights_db1, UniqueCarrier)
+carriers_db2 <- group_by(hflights_db2, UniqueCarrier)
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile,label=sec-3-3]{SQL}
+ \begin{minted}[bgcolor=bg,fontsize=\scriptsize,linenos=true]{sql}
+select public.diabetes.diabetes,
+    madlib.logregr_predict( array[1, times_pregnant,
+            plasma,
+            diastolic_blood_pressure,
+            triceps_skin_fold_thickness,
+            serum_insulin,
+            bmi,
+            diabetes_pedigree,
+            age],
+        public.diabetes_log_reg_ronert.coef
+        )::integer as predict
+from public.diabetes, public.diabetes_log_reg_ronert limit 100;
+\end{minted}
 \end{frame}
 % Emacs 24.3.1 (Org mode 8.2.4)
 \end{document}
