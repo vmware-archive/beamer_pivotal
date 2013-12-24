@@ -15,13 +15,13 @@
 
 1.  Install MacTeX 2013 from [MacTeX](http://tug.org/mactex/)
 
-2.  Install the Python package `pygments` by typing `pip install pygments` in your shell
+2.  Install the Python package `pygments` by typing `$ pip install pygments` in your shell
 
-3.  Symlink this repo to `$~/texmf/tex/latex/` (using `ln -s beamer_pivotal ~/texmf/tex/latex/`, create the folders if they don't exist) and then run `$ $texconfig rehash` in your shell
+3.  Symlink this repo to `~/texmf/tex/latex/` (using `$ ln -s beamer_pivotal ~/texmf/tex/latex/`, create the folders if they don't exist) and then run `$ texconfig rehash` in your shell
 
 # Compilation
 
-Use the following command to compile the source file to a pdf (i.e. set your editor to use that command): `latexmk -pdflatex='lualatex --shell-escape' -pdf example.tex`
+Use the following command to compile the source file to a pdf (i.e. set your editor to use that command): `$ latexmk -pdflatex='lualatex --shell-escape' -pdf example.tex`
 
 # Options
 
@@ -30,11 +30,11 @@ Use `\documentclass[english]{pivotalbeamer}` to set it. If you require further o
 
 # Example deck
 
-The file `example.tex` contains an examplary deck. See `example.pdf` for the compiled version.
+The file `example.tex` contains an examplary deck. See [[https://github.com/gopivotal/beamer_pivotal/blob/master/example.pdf?raw%3Dtrue][example.pdf]] for the compiled version.
 
 # Where to get help
 
--   Type `texdoc beamer` at your command line to open the comprehensive Beamer User Guide. [TeX - LaTeX Stack Exchange](http://tex.stackexchange.com/) also has a lot of material.
+-   Type `$ texdoc beamer` at your command line to open the comprehensive Beamer User Guide. [TeX - LaTeX Stack Exchange](http://tex.stackexchange.com/) also has a lot of material.
 
 # Reporting bugs and feature requests
 
