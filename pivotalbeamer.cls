@@ -48,13 +48,13 @@
 \setbeamertemplate{title page}[mydefault][colsep=-4bp]
 \makeatother
 
-\titlegraphic{\includegraphics[width=10.8cm]{logo}\vskip-5mm}
+\titlegraphic{\includegraphics[width=10.8cm]{logo}}
 
 % Add Pivotal logo to frame titles
 \addtobeamertemplate{frametitle}{}{%
   \begin{tikzpicture}[remember picture,overlay]
-    % \node[anchor=north east,yshift=-1.2pt] at (current page.north east) {\includegraphics[height=0.5cm]{logo}};
-    \node[anchor=north east] at (current page.north east) {\includegraphics[height=0.5cm]{logo}};
+    \node[anchor=north east,yshift=-2.5pt] at (current page.north east) {\includegraphics[height=0.5cm]{logo}};
+    % \node[anchor=north east] at (current page.north east) {\includegraphics[height=0.5cm]{logo}};
   \end{tikzpicture}}
 
 % Custom section pages
@@ -113,7 +113,7 @@
 % \setromanfont{Cambria}
 % \setsansfont{Calibri}
 \setmonofont[Scale=MatchLowercase]{Menlo}
-% \setmathfont{Latin Modern Sans}
+\setmathfont{Latin Modern Sans}
 
 % Import all texMacros
 \input{texMacros}
