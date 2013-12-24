@@ -53,7 +53,7 @@
 % Add Pivotal logo to frame titles
 \addtobeamertemplate{frametitle}{}{%
   \begin{tikzpicture}[remember picture,overlay]
-    \node[anchor=north east,yshift=-2.5pt] at (current page.north east) {\includegraphics[height=0.5cm]{logo}};
+    \node[anchor=north east,yshift=-2.3pt] at (current page.north east) {\includegraphics[height=0.5cm]{logo}};
     % \node[anchor=north east] at (current page.north east) {\includegraphics[height=0.5cm]{logo}};
   \end{tikzpicture}}
 
@@ -109,11 +109,11 @@
 
 % fonts
 \defaultfontfeatures{Ligatures=TeX}
-\setmainfont{Helvetica Neue Light}
+%\setmainfont{Helvetica Neue Light}
 % \setromanfont{Cambria}
-% \setsansfont{Calibri}
+\setsansfont{Helvetica Neue Light}
 \setmonofont[Scale=MatchLowercase]{Menlo}
-\setmathfont{Latin Modern Sans}
+%\setmathfont{TeX Gyre Heros}
 
 % Import all texMacros
 \input{texMacros}
