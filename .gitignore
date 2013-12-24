@@ -2,4 +2,19 @@
 /README.org
 
 /luatex.nYbz7X/
-/luatex.VhfeEP/
+/luatex.VhfeEP/*.out
+*.vrb
+*.aux
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.nav
+*.out
+*.pyg
+*.run.xml
+*.snm
+*.toc
+
+luatex.*
