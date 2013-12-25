@@ -44,18 +44,33 @@
     \end{beamercolorbox}\vskip0.5em
   \end{centering}
   \vfill
-}
+  }
 \setbeamertemplate{title page}[mydefault][colsep=-4bp]
 \makeatother
-
 \titlegraphic{\includegraphics[width=10.8cm]{logo}}
 
+% remove footline from titlepage
+\makeatletter
+\def\maketitle{{\setbeamertemplate{footline}{}\ifbeamer@inframe\titlepage\else\frame{\titlepage}\fi}}
+\makeatother
+
+\setbeamercolor{footlinecolor}{fg=white,bg=pivotalgreen}
+
+\setbeamertemplate{footline}{%
+  \begin{beamercolorbox}[sep=1em,wd=\paperwidth,leftskip=0.5cm,rightskip=0.5cm]{footlinecolor}
+    % \hspace{0.1cm}%
+    \scriptsize{\scriptsize{\insertframenumber}}
+    \hfill \vspace{-1mm}\includegraphics[height=10pt]{logowhite}
+  \end{beamercolorbox}%
+}
+
+
 % Add Pivotal logo to frame titles
-\addtobeamertemplate{frametitle}{}{%
-  \begin{tikzpicture}[remember picture,overlay]
-    \node[anchor=north east,yshift=-2.1pt] at (current page.north east) {\includegraphics[height=0.5cm]{logo}};
-    % \node[anchor=north east] at (current page.north east) {\includegraphics[height=0.5cm]{logo}};
-  \end{tikzpicture}}
+% \addtobeamertemplate{frametitle}{}{%
+% \begin{tikzpicture}[remember picture,overlay]
+%   \node[anchor=north east,yshift=-2.1pt] at (current page.north east) {\includegraphics[height=0.5cm]{logo}};
+%     %   \node[anchor=north east] at (current page.north east) {\includegraphics[height=0.5cm]{logo}};
+% \end{tikzpicture}}
 
 % Custom section pages
 
@@ -109,11 +124,11 @@
 
 % fonts
 \defaultfontfeatures{Ligatures=TeX}
-%\setmainfont{Helvetica Neue Light}
+% \setmainfont{Helvetica Neue Light}
 % \setromanfont{Cambria}
 \setsansfont{Helvetica Neue Light}
 \setmonofont[Scale=MatchLowercase]{Menlo}
-%\setmathfont{TeX Gyre Heros}
+% \setmathfont{TeX Gyre Heros}
 
 % Import all texMacros
 \input{texMacros}
