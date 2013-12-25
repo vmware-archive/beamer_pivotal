@@ -16,6 +16,10 @@
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{footline}[]
 
+\setbeamercolor{title}{fg=pivotalorange,bg=black}
+\setbeamercolor{subtitle}{fg=pivotalorange,bg=black}
+\setbeamercolor{author}{fg=pivotalgreen}
+\setbeamercolor{date}{fg=pivotalgreen}
 % include Pivotal logo on titlepage
 \makeatletter
 \defbeamertemplate*{title page}{mydefault}[1][]
@@ -47,11 +51,11 @@
   }
 \setbeamertemplate{title page}[mydefault][colsep=-4bp]
 \makeatother
-\titlegraphic{\includegraphics[width=10.8cm]{logo}}
+\titlegraphic{\includegraphics[width=10.8cm]{logowhite}}
 
 % remove footline from titlepage
 \makeatletter
-\def\maketitle{{\setbeamertemplate{footline}{}\ifbeamer@inframe\titlepage\else\frame{\titlepage}\fi}}
+\def\maketitle{{\setbeamercolor{background canvas}{bg=black}\setbeamertemplate{footline}{}\ifbeamer@inframe\titlepage\else\frame{\titlepage}\fi}}
 \makeatother
 
 \setbeamercolor{footlinecolor}{fg=white,bg=pivotalgreen}
@@ -136,7 +140,6 @@
 % Adjust beamer theme
 \usepackage[labelfont={color=pivotalgreen}]{caption}
 \setbeamercolor{frametitle}{fg=pivotalgreen}
-\setbeamercolor{title}{fg=black}
 \setbeamercolor*{item}{fg=pivotalgreen}
 % \setbeamercolor{author}{fg=msdarkblue}
 % \setbeamercolor{date}{fg=msdarkblue}
