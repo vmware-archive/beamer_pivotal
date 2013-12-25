@@ -53,7 +53,7 @@
 % Add Pivotal logo to frame titles
 \addtobeamertemplate{frametitle}{}{%
   \begin{tikzpicture}[remember picture,overlay]
-    \node[anchor=north east,yshift=-2.3pt] at (current page.north east) {\includegraphics[height=0.5cm]{logo}};
+    \node[anchor=north east,yshift=-2.1pt] at (current page.north east) {\includegraphics[height=0.5cm]{logo}};
     % \node[anchor=north east] at (current page.north east) {\includegraphics[height=0.5cm]{logo}};
   \end{tikzpicture}}
 
