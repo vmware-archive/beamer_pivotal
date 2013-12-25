@@ -27,7 +27,7 @@
   \vbox{}
   \vfill
   \begin{centering}
-    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par\vskip1em}
+    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par\vskip2em}
     \begin{beamercolorbox}[sep=8pt,center,#1]{title}
       \usebeamerfont{title}\inserttitle\par%
       \ifx\insertsubtitle\@empty%
