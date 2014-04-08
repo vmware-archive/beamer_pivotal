@@ -135,7 +135,7 @@
 % \setmathfont{TeX Gyre Heros}
 
 % Import all texMacros
-\input{texMacros}
+%\input{texMacros}
 
 % Adjust beamer theme
 \usepackage[labelfont={color=pivotalgreen}]{caption}
