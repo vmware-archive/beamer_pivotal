@@ -130,7 +130,9 @@
 \defaultfontfeatures{Ligatures=TeX}
 % \setmainfont{Helvetica Neue Light}
 % \setromanfont{Cambria}
-\setsansfont{Helvetica Neue Light}
+\setsansfont[BoldFont={Helvetica Neue},
+ BoldItalicFont={Helvetica Neue Italic},
+ ItalicFont={Helvetica Neue Light Italic}]{Helvetica Neue Light}
 \setmonofont[Scale=MatchLowercase]{Menlo}
 % \setmathfont{TeX Gyre Heros}
 
