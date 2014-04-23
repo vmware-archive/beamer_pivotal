@@ -1,7 +1,7 @@
 \ProvidesClass{pivotalbeamer}
 
 % Beamer
-\LoadClass[xcolor=dvipsnames,natural,svgnames,rgb,cmyk,table,x11names,aspetratio=169]{beamer}
+\LoadClass[xcolor=dvipsnames,natural,svgnames,rgb,cmyk,table,x11names,aspectratio=169]{beamer}
 
 % language options
 \DeclareOption{english}{\input{english}}
