@@ -149,6 +149,9 @@
 % Fits the presentation to the window when first displayed
 \hypersetup{pdfstartview={Fit}}
 
+% Auto resize images that are too large
+\usepackage[Export]{adjustbox}
+\adjustboxset{max size={\textwidth}{0.7\textheight}}
 
 % fix beamer appendix
 \makeatletter
