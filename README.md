@@ -13,7 +13,7 @@
 </div>
 # Installation
 
-1.  Install MacTeX 2013 from [MacTeX](http://tug.org/mactex/)
+1.  Install MacTeX 2013 from [MacTeX](https://tug.org/mactex/)
 
 2.  Install the Python package `pygments` by typing `$ pip install pygments` in your shell
 
@@ -34,7 +34,7 @@ The file `example.tex` contains an examplary deck. See [example.pdf](https://git
 
 # Where to get help
 
--   Type `$ texdoc beamer` at your command line to open the comprehensive Beamer User Guide. [TeX - LaTeX Stack Exchange](http://tex.stackexchange.com/) also has a lot of material.
+-   Type `$ texdoc beamer` at your command line to open the comprehensive Beamer User Guide. [TeX - LaTeX Stack Exchange](https://tex.stackexchange.com/) also has a lot of material.
 
 # Reporting bugs and feature requests
 
